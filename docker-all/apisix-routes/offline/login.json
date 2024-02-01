@@ -1,0 +1,64 @@
+{
+    "uri": "/login/*",
+    "name": "login",
+    "desc": "Route for Login button of React page to Keycloak Login via APISIX",
+    "methods": [
+      "GET"
+    ],
+    "plugins": {
+      "openid-connect": {
+        "_meta": {
+          "disable": false
+        },
+        "access_token_in_authorization_header": true,
+        "bearer_only": true,
+        "client_id": "hash",
+        "client_secret": "tDsOjbpjpKBDVt4Gd3xNfwcFIos4g9Nk",
+        "discovery": "http://kubernetes.docker.internal:9080/auth/realms/test/.well-known/openid-configuration",
+        "introspection_endpoint": "http://kubernetes.docker.internal:9080/auth/realms/test/protocol/openid-connect/token/introspect",
+        "introspection_endpoint_auth_method": "client_secret_basic",
+        "logout_path": "/logout",
+        "realm": "test",
+        "redirect_uri": "http://kubernetes.docker.internal:9080/home/dashboard",
+        "scope": "openid",
+        "session": {
+          "secret": "zXkdYJVIqZw34hNT4VsWFVI+2WJZQAFrS0SixvWdRCI="
+        },
+        "set_access_token_header": true,
+        "set_id_token_header": true,
+        "set_refresh_token_header": false,
+        "set_userinfo_header": true,
+        "ssl_verify": false,
+        "timeout": 3000,
+        "token_endpoint_auth_method": "client_secret_basic",
+        "unauth_action": "auth",
+        "use_pkce": false
+      },
+      "proxy-rewrite": {
+        "uri": "/auth/realms/test/protocol/openid-connect/auth?response_type=code&client_id=hash&redirect_uri=http://kubernetes.docker.internal:9080/home/dashboard"
+      }
+    },
+    "upstream": {
+      "nodes": [
+        {
+          "host": "kubernetes.docker.internal",
+          "port": 8080,
+          "weight": 1
+        }
+      ],
+      "timeout": {
+        "connect": 6,
+        "send": 6,
+        "read": 6
+      },
+      "type": "roundrobin",
+      "scheme": "http",
+      "pass_host": "pass",
+      "keepalive_pool": {
+        "idle_timeout": 60,
+        "requests": 1000,
+        "size": 320
+      }
+    },
+    "status": 0
+  }

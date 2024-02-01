@@ -1,0 +1,3979 @@
+{
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "bearerFormat": "JWT",
+        "scheme": "bearer",
+        "type": "http"
+      }
+    }
+  },
+  "info": {
+    "title": "RoutesExport",
+    "version": "3.0.0"
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/auth/{params}": {
+      "connect": {
+        "operationId": "keycloakCONNECT",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "497382000945005248",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8080,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "/",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            },
+            "passive": {
+              "healthy": {
+                "http_statuses": [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308],
+                "successes": 5
+              },
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 2,
+                "http_statuses": [429, 500, 503],
+                "tcp_failures": 2,
+                "timeouts": 7
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "delete": {
+        "operationId": "keycloakDELETE",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "497382000945005248",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8080,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "/",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            },
+            "passive": {
+              "healthy": {
+                "http_statuses": [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308],
+                "successes": 5
+              },
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 2,
+                "http_statuses": [429, 500, 503],
+                "tcp_failures": 2,
+                "timeouts": 7
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "get": {
+        "operationId": "keycloakGET",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "497382000945005248",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8080,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "/",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            },
+            "passive": {
+              "healthy": {
+                "http_statuses": [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308],
+                "successes": 5
+              },
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 2,
+                "http_statuses": [429, 500, 503],
+                "tcp_failures": 2,
+                "timeouts": 7
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "head": {
+        "operationId": "keycloakHEAD",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "497382000945005248",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8080,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "/",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            },
+            "passive": {
+              "healthy": {
+                "http_statuses": [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308],
+                "successes": 5
+              },
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 2,
+                "http_statuses": [429, 500, 503],
+                "tcp_failures": 2,
+                "timeouts": 7
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "options": {
+        "operationId": "keycloakOPTIONS",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "497382000945005248",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8080,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "/",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            },
+            "passive": {
+              "healthy": {
+                "http_statuses": [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308],
+                "successes": 5
+              },
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 2,
+                "http_statuses": [429, 500, 503],
+                "tcp_failures": 2,
+                "timeouts": 7
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "patch": {
+        "operationId": "keycloakPATCH",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "497382000945005248",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8080,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "/",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            },
+            "passive": {
+              "healthy": {
+                "http_statuses": [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308],
+                "successes": 5
+              },
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 2,
+                "http_statuses": [429, 500, 503],
+                "tcp_failures": 2,
+                "timeouts": 7
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "post": {
+        "operationId": "keycloakPOST",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "497382000945005248",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8080,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "/",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            },
+            "passive": {
+              "healthy": {
+                "http_statuses": [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308],
+                "successes": 5
+              },
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 2,
+                "http_statuses": [429, 500, 503],
+                "tcp_failures": 2,
+                "timeouts": 7
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "put": {
+        "operationId": "keycloakPUT",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "497382000945005248",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8080,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "/",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            },
+            "passive": {
+              "healthy": {
+                "http_statuses": [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308],
+                "successes": 5
+              },
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 2,
+                "http_statuses": [429, 500, 503],
+                "tcp_failures": 2,
+                "timeouts": 7
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "trace": {
+        "operationId": "keycloakTRACE",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "497382000945005248",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8080,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "/",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            },
+            "passive": {
+              "healthy": {
+                "http_statuses": [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308],
+                "successes": 5
+              },
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 2,
+                "http_statuses": [429, 500, 503],
+                "tcp_failures": 2,
+                "timeouts": 7
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      }
+    },
+    "/home/logout": {
+      "connect": {
+        "operationId": "landingCONNECT",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "summary": "used for landing and after logout",
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498456695010230982",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "delete": {
+        "operationId": "landingDELETE",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "summary": "used for landing and after logout",
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498456695010230982",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "get": {
+        "operationId": "landingGET",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "summary": "used for landing and after logout",
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498456695010230982",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "head": {
+        "operationId": "landingHEAD",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "summary": "used for landing and after logout",
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498456695010230982",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "options": {
+        "operationId": "landingOPTIONS",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "summary": "used for landing and after logout",
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498456695010230982",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "patch": {
+        "operationId": "landingPATCH",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "summary": "used for landing and after logout",
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498456695010230982",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "post": {
+        "operationId": "landingPOST",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "summary": "used for landing and after logout",
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498456695010230982",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "put": {
+        "operationId": "landingPUT",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "summary": "used for landing and after logout",
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498456695010230982",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "trace": {
+        "operationId": "landingTRACE",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "summary": "used for landing and after logout",
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498456695010230982",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      }
+    },
+    "/home/{params}": {
+      "connect": {
+        "operationId": "reactCONNECT",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498445269759689415",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "/",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            },
+            "passive": {
+              "healthy": {
+                "http_statuses": [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308],
+                "successes": 5
+              },
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 2,
+                "http_statuses": [429, 500, 503],
+                "tcp_failures": 2,
+                "timeouts": 7
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "delete": {
+        "operationId": "reactDELETE",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498445269759689415",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "/",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            },
+            "passive": {
+              "healthy": {
+                "http_statuses": [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308],
+                "successes": 5
+              },
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 2,
+                "http_statuses": [429, 500, 503],
+                "tcp_failures": 2,
+                "timeouts": 7
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "get": {
+        "operationId": "reactGET",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498445269759689415",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "/",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            },
+            "passive": {
+              "healthy": {
+                "http_statuses": [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308],
+                "successes": 5
+              },
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 2,
+                "http_statuses": [429, 500, 503],
+                "tcp_failures": 2,
+                "timeouts": 7
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "head": {
+        "operationId": "reactHEAD",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498445269759689415",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "/",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            },
+            "passive": {
+              "healthy": {
+                "http_statuses": [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308],
+                "successes": 5
+              },
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 2,
+                "http_statuses": [429, 500, 503],
+                "tcp_failures": 2,
+                "timeouts": 7
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "options": {
+        "operationId": "reactOPTIONS",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498445269759689415",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "/",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            },
+            "passive": {
+              "healthy": {
+                "http_statuses": [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308],
+                "successes": 5
+              },
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 2,
+                "http_statuses": [429, 500, 503],
+                "tcp_failures": 2,
+                "timeouts": 7
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "patch": {
+        "operationId": "reactPATCH",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498445269759689415",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "/",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            },
+            "passive": {
+              "healthy": {
+                "http_statuses": [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308],
+                "successes": 5
+              },
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 2,
+                "http_statuses": [429, 500, 503],
+                "tcp_failures": 2,
+                "timeouts": 7
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "post": {
+        "operationId": "reactPOST",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498445269759689415",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "/",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            },
+            "passive": {
+              "healthy": {
+                "http_statuses": [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308],
+                "successes": 5
+              },
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 2,
+                "http_statuses": [429, 500, 503],
+                "tcp_failures": 2,
+                "timeouts": 7
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "put": {
+        "operationId": "reactPUT",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498445269759689415",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "/",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            },
+            "passive": {
+              "healthy": {
+                "http_statuses": [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308],
+                "successes": 5
+              },
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 2,
+                "http_statuses": [429, 500, 503],
+                "tcp_failures": 2,
+                "timeouts": 7
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "trace": {
+        "operationId": "reactTRACE",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498445269759689415",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "/",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            },
+            "passive": {
+              "healthy": {
+                "http_statuses": [200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308],
+                "successes": 5
+              },
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 2,
+                "http_statuses": [429, 500, 503],
+                "tcp_failures": 2,
+                "timeouts": 7
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      }
+    },
+    "/login/{params}": {
+      "get": {
+        "operationId": "loginGET",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "summary": "Route for Login button of React page to Keycloak Login via APISIX",
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "1",
+        "x-apisix-plugins": {
+          "openid-connect": {
+            "_meta": {
+              "disable": false
+            },
+            "access_token_in_authorization_header": true,
+            "bearer_only": true,
+            "client_id": "hash",
+            "client_secret": "tDsOjbpjpKBDVt4Gd3xNfwcFIos4g9Nk",
+            "discovery": "http://kubernetes.docker.internal:9080/auth/realms/test/.well-known/openid-configuration",
+            "introspection_endpoint": "http://kubernetes.docker.internal:9080/auth/realms/test/protocol/openid-connect/token/introspect",
+            "introspection_endpoint_auth_method": "client_secret_basic",
+            "logout_path": "/logout",
+            "realm": "test",
+            "redirect_uri": "http://kubernetes.docker.internal:9080/home/dashboard",
+            "scope": "openid",
+            "session": {
+              "secret": "zXkdYJVIqZw34hNT4VsWFVI+2WJZQAFrS0SixvWdRCI="
+            },
+            "set_access_token_header": true,
+            "set_id_token_header": true,
+            "set_refresh_token_header": false,
+            "set_userinfo_header": true,
+            "ssl_verify": false,
+            "timeout": 3000,
+            "token_endpoint_auth_method": "client_secret_basic",
+            "unauth_action": "auth",
+            "use_pkce": false
+          },
+          "proxy-rewrite": {
+            "uri": "/auth/realms/test/protocol/openid-connect/auth?response_type=code&client_id=hash&redirect_uri=http://kubernetes.docker.internal:9080/home/dashboard"
+          }
+        },
+        "x-apisix-priority": 0,
+        "x-apisix-status": 0,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8080,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      }
+    },
+    "/login/{params}-APISIX-REPEAT-URI-6": {
+      "get": {
+        "operationId": "login-OGGET",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "summary": "Duplicate of login without request override to test oidc plugin",
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498455151573467846",
+        "x-apisix-plugins": {
+          "openid-connect": {
+            "_meta": {
+              "disable": false
+            },
+            "access_token_in_authorization_header": true,
+            "bearer_only": false,
+            "client_id": "hash",
+            "client_secret": "tDsOjbpjpKBDVt4Gd3xNfwcFIos4g9Nk",
+            "discovery": "http://kubernetes.docker.internal:9080/auth/realms/test/.well-known/openid-configuration",
+            "introspection_endpoint": "http://kubernetes.docker.internal:9080/auth/realms/test/protocol/openid-connect/token/introspect",
+            "introspection_endpoint_auth_method": "client_secret_basic",
+            "logout_path": "/logout",
+            "realm": "test",
+            "redirect_uri": "http://kubernetes.docker.internal:9080/home/dashboard",
+            "scope": "openid",
+            "session": {
+              "secret": "zXkdYJVIqZw34hNT4VsWFVI+2WJZQAFrS0SixvWdRCI="
+            },
+            "set_access_token_header": true,
+            "set_id_token_header": true,
+            "set_refresh_token_header": false,
+            "set_userinfo_header": true,
+            "ssl_verify": false,
+            "timeout": 3000,
+            "token_endpoint_auth_method": "client_secret_basic",
+            "unauth_action": "auth",
+            "use_pkce": false
+          }
+        },
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8080,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      }
+    },
+    "/portal/{params}": {
+      "get": {
+        "operationId": "LandingGET",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "summary": "Landing Page React",
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498452136019886790",
+        "x-apisix-plugins": {
+          "proxy-rewrite": {
+            "uri": "/"
+          }
+        },
+        "x-apisix-priority": 0,
+        "x-apisix-status": 0,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      }
+    },
+    "/test": {
+      "connect": {
+        "operationId": "testCONNECT",
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [{
+          "bearerAuth": [" "]
+        }],
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "5",
+        "x-apisix-plugins": {
+          "openid-connect": {
+            "_meta": {
+              "disable": false
+            },
+            "access_token_in_authorization_header": true,
+            "bearer_only": true,
+            "client_id": "hash",
+            "client_secret": "OeaEHWVP86NwnzPngdc15wUr7EO2UqQk",
+            "discovery": "http://kubernetes.docker.internal:8080/auth/realms/test/.well-known/openid-configuration",
+            "introspection_endpoint": "http://kubernetes.docker.internal:8080/auth/realms/test/protocol/openid-connect/token/introspect",
+            "introspection_endpoint_auth_method": "client_secret_basic",
+            "logout_path": "/logout",
+            "realm": "test",
+            "redirect_uri": "http://kubernetes.docker.internal:3001/home/dashboard",
+            "scope": "openid",
+            "session": {
+              "secret": "zXkdYJVIqZw34hNT4VsWFVI+2WJZQAFrS0SixvWdRCI="
+            },
+            "set_access_token_header": true,
+            "set_id_token_header": true,
+            "set_refresh_token_header": false,
+            "set_userinfo_header": true,
+            "ssl_verify": false,
+            "timeout": 3000,
+            "token_endpoint_auth_method": "client_secret_basic",
+            "unauth_action": "auth",
+            "use_pkce": false
+          }
+        },
+        "x-apisix-priority": 0,
+        "x-apisix-status": 0,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8017,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "delete": {
+        "operationId": "testDELETE",
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [{
+          "bearerAuth": [" "]
+        }],
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "5",
+        "x-apisix-plugins": {
+          "openid-connect": {
+            "_meta": {
+              "disable": false
+            },
+            "access_token_in_authorization_header": true,
+            "bearer_only": true,
+            "client_id": "hash",
+            "client_secret": "OeaEHWVP86NwnzPngdc15wUr7EO2UqQk",
+            "discovery": "http://kubernetes.docker.internal:8080/auth/realms/test/.well-known/openid-configuration",
+            "introspection_endpoint": "http://kubernetes.docker.internal:8080/auth/realms/test/protocol/openid-connect/token/introspect",
+            "introspection_endpoint_auth_method": "client_secret_basic",
+            "logout_path": "/logout",
+            "realm": "test",
+            "redirect_uri": "http://kubernetes.docker.internal:3001/home/dashboard",
+            "scope": "openid",
+            "session": {
+              "secret": "zXkdYJVIqZw34hNT4VsWFVI+2WJZQAFrS0SixvWdRCI="
+            },
+            "set_access_token_header": true,
+            "set_id_token_header": true,
+            "set_refresh_token_header": false,
+            "set_userinfo_header": true,
+            "ssl_verify": false,
+            "timeout": 3000,
+            "token_endpoint_auth_method": "client_secret_basic",
+            "unauth_action": "auth",
+            "use_pkce": false
+          }
+        },
+        "x-apisix-priority": 0,
+        "x-apisix-status": 0,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8017,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "get": {
+        "operationId": "testGET",
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [{
+          "bearerAuth": [" "]
+        }],
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "5",
+        "x-apisix-plugins": {
+          "openid-connect": {
+            "_meta": {
+              "disable": false
+            },
+            "access_token_in_authorization_header": true,
+            "bearer_only": true,
+            "client_id": "hash",
+            "client_secret": "OeaEHWVP86NwnzPngdc15wUr7EO2UqQk",
+            "discovery": "http://kubernetes.docker.internal:8080/auth/realms/test/.well-known/openid-configuration",
+            "introspection_endpoint": "http://kubernetes.docker.internal:8080/auth/realms/test/protocol/openid-connect/token/introspect",
+            "introspection_endpoint_auth_method": "client_secret_basic",
+            "logout_path": "/logout",
+            "realm": "test",
+            "redirect_uri": "http://kubernetes.docker.internal:3001/home/dashboard",
+            "scope": "openid",
+            "session": {
+              "secret": "zXkdYJVIqZw34hNT4VsWFVI+2WJZQAFrS0SixvWdRCI="
+            },
+            "set_access_token_header": true,
+            "set_id_token_header": true,
+            "set_refresh_token_header": false,
+            "set_userinfo_header": true,
+            "ssl_verify": false,
+            "timeout": 3000,
+            "token_endpoint_auth_method": "client_secret_basic",
+            "unauth_action": "auth",
+            "use_pkce": false
+          }
+        },
+        "x-apisix-priority": 0,
+        "x-apisix-status": 0,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8017,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "head": {
+        "operationId": "testHEAD",
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [{
+          "bearerAuth": [" "]
+        }],
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "5",
+        "x-apisix-plugins": {
+          "openid-connect": {
+            "_meta": {
+              "disable": false
+            },
+            "access_token_in_authorization_header": true,
+            "bearer_only": true,
+            "client_id": "hash",
+            "client_secret": "OeaEHWVP86NwnzPngdc15wUr7EO2UqQk",
+            "discovery": "http://kubernetes.docker.internal:8080/auth/realms/test/.well-known/openid-configuration",
+            "introspection_endpoint": "http://kubernetes.docker.internal:8080/auth/realms/test/protocol/openid-connect/token/introspect",
+            "introspection_endpoint_auth_method": "client_secret_basic",
+            "logout_path": "/logout",
+            "realm": "test",
+            "redirect_uri": "http://kubernetes.docker.internal:3001/home/dashboard",
+            "scope": "openid",
+            "session": {
+              "secret": "zXkdYJVIqZw34hNT4VsWFVI+2WJZQAFrS0SixvWdRCI="
+            },
+            "set_access_token_header": true,
+            "set_id_token_header": true,
+            "set_refresh_token_header": false,
+            "set_userinfo_header": true,
+            "ssl_verify": false,
+            "timeout": 3000,
+            "token_endpoint_auth_method": "client_secret_basic",
+            "unauth_action": "auth",
+            "use_pkce": false
+          }
+        },
+        "x-apisix-priority": 0,
+        "x-apisix-status": 0,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8017,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "options": {
+        "operationId": "testOPTIONS",
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [{
+          "bearerAuth": [" "]
+        }],
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "5",
+        "x-apisix-plugins": {
+          "openid-connect": {
+            "_meta": {
+              "disable": false
+            },
+            "access_token_in_authorization_header": true,
+            "bearer_only": true,
+            "client_id": "hash",
+            "client_secret": "OeaEHWVP86NwnzPngdc15wUr7EO2UqQk",
+            "discovery": "http://kubernetes.docker.internal:8080/auth/realms/test/.well-known/openid-configuration",
+            "introspection_endpoint": "http://kubernetes.docker.internal:8080/auth/realms/test/protocol/openid-connect/token/introspect",
+            "introspection_endpoint_auth_method": "client_secret_basic",
+            "logout_path": "/logout",
+            "realm": "test",
+            "redirect_uri": "http://kubernetes.docker.internal:3001/home/dashboard",
+            "scope": "openid",
+            "session": {
+              "secret": "zXkdYJVIqZw34hNT4VsWFVI+2WJZQAFrS0SixvWdRCI="
+            },
+            "set_access_token_header": true,
+            "set_id_token_header": true,
+            "set_refresh_token_header": false,
+            "set_userinfo_header": true,
+            "ssl_verify": false,
+            "timeout": 3000,
+            "token_endpoint_auth_method": "client_secret_basic",
+            "unauth_action": "auth",
+            "use_pkce": false
+          }
+        },
+        "x-apisix-priority": 0,
+        "x-apisix-status": 0,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8017,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "patch": {
+        "operationId": "testPATCH",
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [{
+          "bearerAuth": [" "]
+        }],
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "5",
+        "x-apisix-plugins": {
+          "openid-connect": {
+            "_meta": {
+              "disable": false
+            },
+            "access_token_in_authorization_header": true,
+            "bearer_only": true,
+            "client_id": "hash",
+            "client_secret": "OeaEHWVP86NwnzPngdc15wUr7EO2UqQk",
+            "discovery": "http://kubernetes.docker.internal:8080/auth/realms/test/.well-known/openid-configuration",
+            "introspection_endpoint": "http://kubernetes.docker.internal:8080/auth/realms/test/protocol/openid-connect/token/introspect",
+            "introspection_endpoint_auth_method": "client_secret_basic",
+            "logout_path": "/logout",
+            "realm": "test",
+            "redirect_uri": "http://kubernetes.docker.internal:3001/home/dashboard",
+            "scope": "openid",
+            "session": {
+              "secret": "zXkdYJVIqZw34hNT4VsWFVI+2WJZQAFrS0SixvWdRCI="
+            },
+            "set_access_token_header": true,
+            "set_id_token_header": true,
+            "set_refresh_token_header": false,
+            "set_userinfo_header": true,
+            "ssl_verify": false,
+            "timeout": 3000,
+            "token_endpoint_auth_method": "client_secret_basic",
+            "unauth_action": "auth",
+            "use_pkce": false
+          }
+        },
+        "x-apisix-priority": 0,
+        "x-apisix-status": 0,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8017,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "post": {
+        "operationId": "testPOST",
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [{
+          "bearerAuth": [" "]
+        }],
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "5",
+        "x-apisix-plugins": {
+          "openid-connect": {
+            "_meta": {
+              "disable": false
+            },
+            "access_token_in_authorization_header": true,
+            "bearer_only": true,
+            "client_id": "hash",
+            "client_secret": "OeaEHWVP86NwnzPngdc15wUr7EO2UqQk",
+            "discovery": "http://kubernetes.docker.internal:8080/auth/realms/test/.well-known/openid-configuration",
+            "introspection_endpoint": "http://kubernetes.docker.internal:8080/auth/realms/test/protocol/openid-connect/token/introspect",
+            "introspection_endpoint_auth_method": "client_secret_basic",
+            "logout_path": "/logout",
+            "realm": "test",
+            "redirect_uri": "http://kubernetes.docker.internal:3001/home/dashboard",
+            "scope": "openid",
+            "session": {
+              "secret": "zXkdYJVIqZw34hNT4VsWFVI+2WJZQAFrS0SixvWdRCI="
+            },
+            "set_access_token_header": true,
+            "set_id_token_header": true,
+            "set_refresh_token_header": false,
+            "set_userinfo_header": true,
+            "ssl_verify": false,
+            "timeout": 3000,
+            "token_endpoint_auth_method": "client_secret_basic",
+            "unauth_action": "auth",
+            "use_pkce": false
+          }
+        },
+        "x-apisix-priority": 0,
+        "x-apisix-status": 0,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8017,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "put": {
+        "operationId": "testPUT",
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [{
+          "bearerAuth": [" "]
+        }],
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "5",
+        "x-apisix-plugins": {
+          "openid-connect": {
+            "_meta": {
+              "disable": false
+            },
+            "access_token_in_authorization_header": true,
+            "bearer_only": true,
+            "client_id": "hash",
+            "client_secret": "OeaEHWVP86NwnzPngdc15wUr7EO2UqQk",
+            "discovery": "http://kubernetes.docker.internal:8080/auth/realms/test/.well-known/openid-configuration",
+            "introspection_endpoint": "http://kubernetes.docker.internal:8080/auth/realms/test/protocol/openid-connect/token/introspect",
+            "introspection_endpoint_auth_method": "client_secret_basic",
+            "logout_path": "/logout",
+            "realm": "test",
+            "redirect_uri": "http://kubernetes.docker.internal:3001/home/dashboard",
+            "scope": "openid",
+            "session": {
+              "secret": "zXkdYJVIqZw34hNT4VsWFVI+2WJZQAFrS0SixvWdRCI="
+            },
+            "set_access_token_header": true,
+            "set_id_token_header": true,
+            "set_refresh_token_header": false,
+            "set_userinfo_header": true,
+            "ssl_verify": false,
+            "timeout": 3000,
+            "token_endpoint_auth_method": "client_secret_basic",
+            "unauth_action": "auth",
+            "use_pkce": false
+          }
+        },
+        "x-apisix-priority": 0,
+        "x-apisix-status": 0,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8017,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "trace": {
+        "operationId": "testTRACE",
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [{
+          "bearerAuth": [" "]
+        }],
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "5",
+        "x-apisix-plugins": {
+          "openid-connect": {
+            "_meta": {
+              "disable": false
+            },
+            "access_token_in_authorization_header": true,
+            "bearer_only": true,
+            "client_id": "hash",
+            "client_secret": "OeaEHWVP86NwnzPngdc15wUr7EO2UqQk",
+            "discovery": "http://kubernetes.docker.internal:8080/auth/realms/test/.well-known/openid-configuration",
+            "introspection_endpoint": "http://kubernetes.docker.internal:8080/auth/realms/test/protocol/openid-connect/token/introspect",
+            "introspection_endpoint_auth_method": "client_secret_basic",
+            "logout_path": "/logout",
+            "realm": "test",
+            "redirect_uri": "http://kubernetes.docker.internal:3001/home/dashboard",
+            "scope": "openid",
+            "session": {
+              "secret": "zXkdYJVIqZw34hNT4VsWFVI+2WJZQAFrS0SixvWdRCI="
+            },
+            "set_access_token_header": true,
+            "set_id_token_header": true,
+            "set_refresh_token_header": false,
+            "set_userinfo_header": true,
+            "ssl_verify": false,
+            "timeout": 3000,
+            "token_endpoint_auth_method": "client_secret_basic",
+            "unauth_action": "auth",
+            "use_pkce": false
+          }
+        },
+        "x-apisix-priority": 0,
+        "x-apisix-status": 0,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 8017,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "checks": {
+            "active": {
+              "concurrency": 10,
+              "healthy": {
+                "http_statuses": [200, 302],
+                "interval": 1,
+                "successes": 2
+              },
+              "http_path": "",
+              "timeout": 1,
+              "type": "http",
+              "unhealthy": {
+                "http_failures": 5,
+                "http_statuses": [429, 404, 500, 501, 502, 503, 504, 505],
+                "interval": 1,
+                "tcp_failures": 2,
+                "timeouts": 3
+              }
+            }
+          },
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      }
+    },
+    "/{params}": {
+      "connect": {
+        "operationId": "Landing PageCONNECT",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498459543630512838",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "delete": {
+        "operationId": "Landing PageDELETE",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498459543630512838",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "get": {
+        "operationId": "Landing PageGET",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498459543630512838",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "head": {
+        "operationId": "Landing PageHEAD",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498459543630512838",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "options": {
+        "operationId": "Landing PageOPTIONS",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498459543630512838",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "patch": {
+        "operationId": "Landing PagePATCH",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498459543630512838",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "post": {
+        "operationId": "Landing PagePOST",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498459543630512838",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "put": {
+        "operationId": "Landing PagePUT",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498459543630512838",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      },
+      "trace": {
+        "operationId": "Landing PageTRACE",
+        "parameters": [{
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }, {
+          "description": "params in path",
+          "in": "path",
+          "name": "params",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
+        "requestBody": {},
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "x-apisix-enable_websocket": false,
+        "x-apisix-id": "498459543630512838",
+        "x-apisix-priority": 0,
+        "x-apisix-status": 1,
+        "x-apisix-upstream": {
+          "nodes": [{
+            "host": "kubernetes.docker.internal",
+            "port": 3001,
+            "weight": 1
+          }],
+          "timeout": {
+            "connect": 6,
+            "send": 6,
+            "read": 6
+          },
+          "type": "roundrobin",
+          "scheme": "http",
+          "pass_host": "pass",
+          "keepalive_pool": {
+            "idle_timeout": 60,
+            "requests": 1000,
+            "size": 320
+          }
+        }
+      }
+    }
+  }
+}

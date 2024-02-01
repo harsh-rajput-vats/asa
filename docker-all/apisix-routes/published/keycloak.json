@@ -1,0 +1,96 @@
+{
+    "uri": "/auth/*",
+    "name": "keycloak",
+    "upstream": {
+      "nodes": [
+        {
+          "host": "kubernetes.docker.internal",
+          "port": 8080,
+          "weight": 1
+        }
+      ],
+      "timeout": {
+        "connect": 6,
+        "send": 6,
+        "read": 6
+      },
+      "type": "roundrobin",
+      "checks": {
+        "active": {
+          "concurrency": 10,
+          "healthy": {
+            "http_statuses": [
+              200,
+              302
+            ],
+            "interval": 1,
+            "successes": 2
+          },
+          "http_path": "/",
+          "timeout": 1,
+          "type": "http",
+          "unhealthy": {
+            "http_failures": 5,
+            "http_statuses": [
+              429,
+              404,
+              500,
+              501,
+              502,
+              503,
+              504,
+              505
+            ],
+            "interval": 1,
+            "tcp_failures": 2,
+            "timeouts": 3
+          }
+        },
+        "passive": {
+          "healthy": {
+            "http_statuses": [
+              200,
+              201,
+              202,
+              203,
+              204,
+              205,
+              206,
+              207,
+              208,
+              226,
+              300,
+              301,
+              302,
+              303,
+              304,
+              305,
+              306,
+              307,
+              308
+            ],
+            "successes": 5
+          },
+          "type": "http",
+          "unhealthy": {
+            "http_failures": 2,
+            "http_statuses": [
+              429,
+              500,
+              503
+            ],
+            "tcp_failures": 2,
+            "timeouts": 7
+          }
+        }
+      },
+      "scheme": "http",
+      "pass_host": "pass",
+      "keepalive_pool": {
+        "idle_timeout": 60,
+        "requests": 1000,
+        "size": 320
+      }
+    },
+    "status": 1
+  }
