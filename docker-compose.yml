@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  enu-oprintrvn-client:
+    container_name: enu-oprintrvn-client
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3001:3001"
+    networks:
+      - apisix
+    environment:
+      - PUBLIC_URL=/home
+
+networks:
+  apisix:
+

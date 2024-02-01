@@ -1,0 +1,11 @@
+
+.MuiSnackbar-root{
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1400;
+    left: 8px;
+    right: 8px;
+    top: 115px !important;
+}
